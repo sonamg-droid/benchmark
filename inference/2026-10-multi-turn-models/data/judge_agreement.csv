@@ -1,0 +1,46 @@
+model,scenario_id,completion_agreement,mean_absolute_score_difference
+GLM 5.3 Flash,dev-01-cursor-pagination,True,0
+GLM 5.3 Flash,dev-02-zero-downtime-migration,True,0.8
+GLM 5.3 Flash,dev-03-webhook-verification,True,0
+GLM 5.3 Flash,dev-04-json-normalization,True,0
+GLM 5.3 Flash,dev-05-distributed-rate-limit,True,0
+GLM 5.3 Flash,biz-01-support-triage,True,0
+GLM 5.3 Flash,biz-02-launch-brief,True,0
+GLM 5.3 Flash,biz-03-policy-faq,True,0
+GLM 5.3 Flash,biz-04-account-summary,True,0
+GLM 5.3 Flash,biz-05-incident-update,True,0.6
+GLM 5.3 Flash,plan-01-workshop-schedule,True,0
+GLM 5.3 Flash,plan-02-executive-edit,True,0
+GLM 5.3 Flash,plan-03-hiring-scorecard,True,0.4
+GLM 5.3 Flash,plan-04-dependent-project-plan,False,0.4
+GLM 5.3 Flash,plan-05-invoice-extraction,True,0
+GLM 5.3,dev-01-cursor-pagination,True,0.2
+GLM 5.3,dev-02-zero-downtime-migration,True,0.6
+GLM 5.3,dev-03-webhook-verification,True,0
+GLM 5.3,dev-04-json-normalization,True,0
+GLM 5.3,dev-05-distributed-rate-limit,True,0.2
+GLM 5.3,biz-01-support-triage,True,0
+GLM 5.3,biz-02-launch-brief,True,0
+GLM 5.3,biz-03-policy-faq,True,0.6
+GLM 5.3,biz-04-account-summary,True,0
+GLM 5.3,biz-05-incident-update,True,0.2
+GLM 5.3,plan-01-workshop-schedule,True,0
+GLM 5.3,plan-02-executive-edit,True,0
+GLM 5.3,plan-03-hiring-scorecard,True,0.4
+GLM 5.3,plan-04-dependent-project-plan,False,0.4
+GLM 5.3,plan-05-invoice-extraction,True,0
+Kimi K3,dev-01-cursor-pagination,True,0.2
+Kimi K3,dev-02-zero-downtime-migration,True,0
+Kimi K3,dev-03-webhook-verification,True,0.2
+Kimi K3,dev-04-json-normalization,True,0
+Kimi K3,dev-05-distributed-rate-limit,True,0
+Kimi K3,biz-01-support-triage,True,0
+Kimi K3,biz-02-launch-brief,True,0
+Kimi K3,biz-03-policy-faq,True,0
+Kimi K3,biz-04-account-summary,True,0
+Kimi K3,biz-05-incident-update,True,0.6
+Kimi K3,plan-01-workshop-schedule,True,0
+Kimi K3,plan-02-executive-edit,True,0.8
+Kimi K3,plan-03-hiring-scorecard,True,0.2
+Kimi K3,plan-04-dependent-project-plan,True,0.4
+Kimi K3,plan-05-invoice-extraction,True,0

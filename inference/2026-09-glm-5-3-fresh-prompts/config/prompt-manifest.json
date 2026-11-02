@@ -1,0 +1,542 @@
+[
+  {
+    "profile": "01_1k_in_100_out",
+    "variant": "01_1k_in_100_out_fresh_01",
+    "seed": 9585453497248330750,
+    "user_sha256": "97f9dc6580faac6e57eea23e21a7cda6b4dce906359e323328dfbb3e3c72b28c",
+    "user_chars": 3604,
+    "user_words": 630,
+    "max_tokens": 120
+  },
+  {
+    "profile": "01_1k_in_100_out",
+    "variant": "01_1k_in_100_out_fresh_02",
+    "seed": 14038480882745752943,
+    "user_sha256": "248a5206d6ec1eabecbc911a4c34281614e8987182eaae576f5cc195f9762a92",
+    "user_chars": 3604,
+    "user_words": 630,
+    "max_tokens": 120
+  },
+  {
+    "profile": "01_1k_in_100_out",
+    "variant": "01_1k_in_100_out_fresh_03",
+    "seed": 18296234881123534581,
+    "user_sha256": "c395db5d16d81235666cbaa6e5ff9dab8b865745db6b5efedf26371326001649",
+    "user_chars": 3604,
+    "user_words": 630,
+    "max_tokens": 120
+  },
+  {
+    "profile": "01_1k_in_100_out",
+    "variant": "01_1k_in_100_out_fresh_04",
+    "seed": 18296309244034727878,
+    "user_sha256": "04bf12e2f910221fd8c86f59457aa5cf9f5a68b872ce57bdd66b8cb73ba2e056",
+    "user_chars": 3604,
+    "user_words": 630,
+    "max_tokens": 120
+  },
+  {
+    "profile": "01_1k_in_100_out",
+    "variant": "01_1k_in_100_out_fresh_05",
+    "seed": 14537974097344651076,
+    "user_sha256": "f2146076f54fd0f295b3232f8e1bceeba6f53ab3a44ff7c8dd7724863659b549",
+    "user_chars": 3604,
+    "user_words": 630,
+    "max_tokens": 120
+  },
+  {
+    "profile": "01_1k_in_100_out",
+    "variant": "01_1k_in_100_out_fresh_06",
+    "seed": 11402910678045127508,
+    "user_sha256": "8bfe7c31cfd3dc6e2ddd672ac11a0a3d20fb3bc4279f0ca3347feced628449ca",
+    "user_chars": 3604,
+    "user_words": 630,
+    "max_tokens": 120
+  },
+  {
+    "profile": "01_1k_in_100_out",
+    "variant": "01_1k_in_100_out_fresh_07",
+    "seed": 1812297833024346853,
+    "user_sha256": "61958ff728fda0c234e8f2b732ea8c534a2df0e2018232e82e39bb868d609a02",
+    "user_chars": 3604,
+    "user_words": 630,
+    "max_tokens": 120
+  },
+  {
+    "profile": "01_1k_in_100_out",
+    "variant": "01_1k_in_100_out_fresh_08",
+    "seed": 11817498287541062941,
+    "user_sha256": "2823c0ab0c31af24f597c710b84766dc0b7bafde7df5ea1175f12d5be1ab2081",
+    "user_chars": 3604,
+    "user_words": 630,
+    "max_tokens": 120
+  },
+  {
+    "profile": "01_1k_in_100_out",
+    "variant": "01_1k_in_100_out_fresh_09",
+    "seed": 467041089107318732,
+    "user_sha256": "a1c66c7f254ad0ad5bd92fbfb5974afab26dea2c6f35ed2d3f24c256b14837cf",
+    "user_chars": 3604,
+    "user_words": 630,
+    "max_tokens": 120
+  },
+  {
+    "profile": "01_1k_in_100_out",
+    "variant": "01_1k_in_100_out_fresh_10",
+    "seed": 7556230254255447948,
+    "user_sha256": "901a4c3b6edfda9f8a37def2fd82f1d3827784e15adba5742b2c8b682b17ed1f",
+    "user_chars": 3604,
+    "user_words": 630,
+    "max_tokens": 120
+  },
+  {
+    "profile": "02_1k_in_1k_out",
+    "variant": "02_1k_in_1k_out_fresh_01",
+    "seed": 7160166196977990080,
+    "user_sha256": "b471fc1a82d5386ca2809c7c01c9a148396174b9b2b0ea9110a6fcd3dc1e70bb",
+    "user_chars": 3803,
+    "user_words": 655,
+    "max_tokens": 1200
+  },
+  {
+    "profile": "02_1k_in_1k_out",
+    "variant": "02_1k_in_1k_out_fresh_02",
+    "seed": 7732238375536249370,
+    "user_sha256": "3568c7101e51f3205b7c2b1af6a865c5d1f1974fcb1fecdfb36a866672538a68",
+    "user_chars": 3803,
+    "user_words": 655,
+    "max_tokens": 1200
+  },
+  {
+    "profile": "02_1k_in_1k_out",
+    "variant": "02_1k_in_1k_out_fresh_03",
+    "seed": 12937340259112195809,
+    "user_sha256": "1dc2b7a2986f8f84361b9f1d39fa7b8332e96708ea188068d8a3638fb1c9a984",
+    "user_chars": 3803,
+    "user_words": 655,
+    "max_tokens": 1200
+  },
+  {
+    "profile": "02_1k_in_1k_out",
+    "variant": "02_1k_in_1k_out_fresh_04",
+    "seed": 13102338588636070177,
+    "user_sha256": "6c429abe424159574055a1421760823aa3ff3db91e55d1214efc6bbe12f6ad4e",
+    "user_chars": 3803,
+    "user_words": 655,
+    "max_tokens": 1200
+  },
+  {
+    "profile": "02_1k_in_1k_out",
+    "variant": "02_1k_in_1k_out_fresh_05",
+    "seed": 7374033996993797308,
+    "user_sha256": "56824f1bf856cb2418fe70a3e08317bb24eb4ab4005ab550c8eda459848fa605",
+    "user_chars": 3803,
+    "user_words": 655,
+    "max_tokens": 1200
+  },
+  {
+    "profile": "02_1k_in_1k_out",
+    "variant": "02_1k_in_1k_out_fresh_06",
+    "seed": 2074172178220257660,
+    "user_sha256": "90e18a91f489c792c6734e741f336cd4259c4e8bb767fb4e6446c2cdbc0ce0ff",
+    "user_chars": 3803,
+    "user_words": 655,
+    "max_tokens": 1200
+  },
+  {
+    "profile": "02_1k_in_1k_out",
+    "variant": "02_1k_in_1k_out_fresh_07",
+    "seed": 7329913951757812729,
+    "user_sha256": "9f3423afc2a53efeb4a9ab87e9ab0c0756672b053c36935ca608a05058db3430",
+    "user_chars": 3803,
+    "user_words": 655,
+    "max_tokens": 1200
+  },
+  {
+    "profile": "02_1k_in_1k_out",
+    "variant": "02_1k_in_1k_out_fresh_08",
+    "seed": 7896362808831380610,
+    "user_sha256": "f0692f723f91ae5d9f3b4c0954e35edd668f7fd4966ace8a317d8054ab543554",
+    "user_chars": 3803,
+    "user_words": 655,
+    "max_tokens": 1200
+  },
+  {
+    "profile": "02_1k_in_1k_out",
+    "variant": "02_1k_in_1k_out_fresh_09",
+    "seed": 144403828517900099,
+    "user_sha256": "72026d2af4df2608c1a79add23ba0d108f02d07b61341693a9849192cc9401a4",
+    "user_chars": 3803,
+    "user_words": 655,
+    "max_tokens": 1200
+  },
+  {
+    "profile": "02_1k_in_1k_out",
+    "variant": "02_1k_in_1k_out_fresh_10",
+    "seed": 977254292269220813,
+    "user_sha256": "159059a6dc116470d2151819562ac7c49be20bd010f66dfef6baf169a880c711",
+    "user_chars": 3803,
+    "user_words": 655,
+    "max_tokens": 1200
+  },
+  {
+    "profile": "03_10k_in_100_out",
+    "variant": "03_10k_in_100_out_fresh_01",
+    "seed": 14734465178731172535,
+    "user_sha256": "a163854a65f4cd3ca1cbad10e28a6067be2830a05f20c870f8a16f1c836109ec",
+    "user_chars": 38104,
+    "user_words": 6663,
+    "max_tokens": 120
+  },
+  {
+    "profile": "03_10k_in_100_out",
+    "variant": "03_10k_in_100_out_fresh_02",
+    "seed": 16799956420611418943,
+    "user_sha256": "145815b7ad711dda09cffbb7166d29384c3c45c1fbe735403533ea621118a69a",
+    "user_chars": 38104,
+    "user_words": 6663,
+    "max_tokens": 120
+  },
+  {
+    "profile": "03_10k_in_100_out",
+    "variant": "03_10k_in_100_out_fresh_03",
+    "seed": 18299063339735145391,
+    "user_sha256": "bbee54a4de3901fac4ca9cbeab6be3fa2a4a9689b9d315055e2f8e4207ebdcf1",
+    "user_chars": 38104,
+    "user_words": 6663,
+    "max_tokens": 120
+  },
+  {
+    "profile": "03_10k_in_100_out",
+    "variant": "03_10k_in_100_out_fresh_04",
+    "seed": 13597062883550800932,
+    "user_sha256": "26e6add606c8856a9df757c6d888cc98e35d2229523b69a754e11bdc1e674403",
+    "user_chars": 38104,
+    "user_words": 6663,
+    "max_tokens": 120
+  },
+  {
+    "profile": "03_10k_in_100_out",
+    "variant": "03_10k_in_100_out_fresh_05",
+    "seed": 7441600905361719558,
+    "user_sha256": "39c463fb2aa7981254868bf33439a6b73095f93479c7e8702ac5602571abefe0",
+    "user_chars": 38104,
+    "user_words": 6663,
+    "max_tokens": 120
+  },
+  {
+    "profile": "03_10k_in_100_out",
+    "variant": "03_10k_in_100_out_fresh_06",
+    "seed": 10343419209390682465,
+    "user_sha256": "6895467a56df58db7752865f83fd8317082e08378dd77a5f5cbcf18935d8c918",
+    "user_chars": 38104,
+    "user_words": 6663,
+    "max_tokens": 120
+  },
+  {
+    "profile": "03_10k_in_100_out",
+    "variant": "03_10k_in_100_out_fresh_07",
+    "seed": 12754557476668885524,
+    "user_sha256": "fff1aea73201d2cd37ced259bc59e2be4483d82750f3687763eed97397f79e6e",
+    "user_chars": 38104,
+    "user_words": 6663,
+    "max_tokens": 120
+  },
+  {
+    "profile": "03_10k_in_100_out",
+    "variant": "03_10k_in_100_out_fresh_08",
+    "seed": 6181564677368244006,
+    "user_sha256": "7236896e61811088c6a4eb597133f7878dac07a4d82c22346c1dbe46bebb5927",
+    "user_chars": 38104,
+    "user_words": 6663,
+    "max_tokens": 120
+  },
+  {
+    "profile": "03_10k_in_100_out",
+    "variant": "03_10k_in_100_out_fresh_09",
+    "seed": 633248750977185551,
+    "user_sha256": "131782348e7d4d0d3d6286ec9945cb49ffcb481c1a9db3c6caefbd971850727c",
+    "user_chars": 38104,
+    "user_words": 6663,
+    "max_tokens": 120
+  },
+  {
+    "profile": "03_10k_in_100_out",
+    "variant": "03_10k_in_100_out_fresh_10",
+    "seed": 14214552915755642198,
+    "user_sha256": "9b4241d604c26eff948966f5872b79e2b7e0b741509f9ff421af498549bb70fa",
+    "user_chars": 38104,
+    "user_words": 6663,
+    "max_tokens": 120
+  },
+  {
+    "profile": "04_10k_in_1k_out",
+    "variant": "04_10k_in_1k_out_fresh_01",
+    "seed": 15118465483461421914,
+    "user_sha256": "b62a14884c8292d00d7dce42485eb06ea8d8e8c13b747e24413071d1048126e4",
+    "user_chars": 38316,
+    "user_words": 6693,
+    "max_tokens": 1200
+  },
+  {
+    "profile": "04_10k_in_1k_out",
+    "variant": "04_10k_in_1k_out_fresh_02",
+    "seed": 1341733116840847481,
+    "user_sha256": "77b96c2f54fef9c7be806257948e2c19a9544166da992c876a030df04d70ebab",
+    "user_chars": 38316,
+    "user_words": 6693,
+    "max_tokens": 1200
+  },
+  {
+    "profile": "04_10k_in_1k_out",
+    "variant": "04_10k_in_1k_out_fresh_03",
+    "seed": 10774710515074629621,
+    "user_sha256": "9f9a9283bf8091131f5dbd7c0d537359cfe2a81c5a0faa40c6af796a5ab94565",
+    "user_chars": 38316,
+    "user_words": 6693,
+    "max_tokens": 1200
+  },
+  {
+    "profile": "04_10k_in_1k_out",
+    "variant": "04_10k_in_1k_out_fresh_04",
+    "seed": 3854546445041441283,
+    "user_sha256": "6d32e0e312d6c7bc0f3c87b41777b21f72b4a956266bf3891360850f18707fd3",
+    "user_chars": 38316,
+    "user_words": 6693,
+    "max_tokens": 1200
+  },
+  {
+    "profile": "04_10k_in_1k_out",
+    "variant": "04_10k_in_1k_out_fresh_05",
+    "seed": 18262208110903539720,
+    "user_sha256": "25405bf69f24de17fbc3ad1da8fa88f474c717d1b4ec70e3c0d2b1c209d1a8eb",
+    "user_chars": 38316,
+    "user_words": 6693,
+    "max_tokens": 1200
+  },
+  {
+    "profile": "04_10k_in_1k_out",
+    "variant": "04_10k_in_1k_out_fresh_06",
+    "seed": 7895942884328975833,
+    "user_sha256": "87292fa663876465fd5cb3c618c23964cbf73f79071f1d9ca7e338c50335f33c",
+    "user_chars": 38316,
+    "user_words": 6693,
+    "max_tokens": 1200
+  },
+  {
+    "profile": "04_10k_in_1k_out",
+    "variant": "04_10k_in_1k_out_fresh_07",
+    "seed": 4318372079258602131,
+    "user_sha256": "e107f0571a92341579d360b76cd44329f60689775a0542334298836cc5ec86be",
+    "user_chars": 38316,
+    "user_words": 6693,
+    "max_tokens": 1200
+  },
+  {
+    "profile": "04_10k_in_1k_out",
+    "variant": "04_10k_in_1k_out_fresh_08",
+    "seed": 8357548598429954667,
+    "user_sha256": "9e00a5f902ce1d78e3197c0455cbef93bd61d6791e14360dd8ec79aa3933a60a",
+    "user_chars": 38316,
+    "user_words": 6693,
+    "max_tokens": 1200
+  },
+  {
+    "profile": "04_10k_in_1k_out",
+    "variant": "04_10k_in_1k_out_fresh_09",
+    "seed": 12869518524428369047,
+    "user_sha256": "04b834887ff5347ef948f4a3dbfd538733c87596e4400c199d755dec4623bbbd",
+    "user_chars": 38316,
+    "user_words": 6693,
+    "max_tokens": 1200
+  },
+  {
+    "profile": "04_10k_in_1k_out",
+    "variant": "04_10k_in_1k_out_fresh_10",
+    "seed": 15688400861808994260,
+    "user_sha256": "42952bae6bb8c1b8e2e9f5dcf1b731674336ec2d6416e5cf99edc680342f3346",
+    "user_chars": 38316,
+    "user_words": 6693,
+    "max_tokens": 1200
+  },
+  {
+    "profile": "05_100k_in_100_out",
+    "variant": "05_100k_in_100_out_fresh_01",
+    "seed": 11293367451141388097,
+    "user_sha256": "76be45f46327a543e3eb89ef8d506654cadcb495a534d716ef1e5795e3dfa001",
+    "user_chars": 359812,
+    "user_words": 62698,
+    "max_tokens": 120
+  },
+  {
+    "profile": "05_100k_in_100_out",
+    "variant": "05_100k_in_100_out_fresh_02",
+    "seed": 11203706589238623567,
+    "user_sha256": "7d4547e60112194892ddb5709d024b82e7c9caeaf1fe9bd1367d900eaaf0fdab",
+    "user_chars": 359812,
+    "user_words": 62698,
+    "max_tokens": 120
+  },
+  {
+    "profile": "05_100k_in_100_out",
+    "variant": "05_100k_in_100_out_fresh_03",
+    "seed": 6433017880825723798,
+    "user_sha256": "be287e498a0850e8ac7fc2376aa68012f10db0e0ae5e22eb298dbd49d13a28c1",
+    "user_chars": 359812,
+    "user_words": 62698,
+    "max_tokens": 120
+  },
+  {
+    "profile": "05_100k_in_100_out",
+    "variant": "05_100k_in_100_out_fresh_04",
+    "seed": 1705892381290303804,
+    "user_sha256": "f7acd8bece1af7ca44fecab6d7839db815dec6c73269cf43cd2b66d44ebcc8f2",
+    "user_chars": 359812,
+    "user_words": 62698,
+    "max_tokens": 120
+  },
+  {
+    "profile": "05_100k_in_100_out",
+    "variant": "05_100k_in_100_out_fresh_05",
+    "seed": 10493778327133655362,
+    "user_sha256": "6ca9a047ae682c73084860d5c2b1b0c680f1ed61a377cfcc25e0c6d277cd15b0",
+    "user_chars": 359812,
+    "user_words": 62698,
+    "max_tokens": 120
+  },
+  {
+    "profile": "05_100k_in_100_out",
+    "variant": "05_100k_in_100_out_fresh_06",
+    "seed": 15323391999060917196,
+    "user_sha256": "4e3cdf2039d8b0737e820c7bc791ceb171b0d7c5212cc0444917f20f65f6856c",
+    "user_chars": 359812,
+    "user_words": 62698,
+    "max_tokens": 120
+  },
+  {
+    "profile": "05_100k_in_100_out",
+    "variant": "05_100k_in_100_out_fresh_07",
+    "seed": 10495054031157687698,
+    "user_sha256": "3bfe67d284449f2a532b1fdb30b6b056f8c3f3de33f24015d5b3a91d9316bf8a",
+    "user_chars": 359812,
+    "user_words": 62698,
+    "max_tokens": 120
+  },
+  {
+    "profile": "05_100k_in_100_out",
+    "variant": "05_100k_in_100_out_fresh_08",
+    "seed": 10604410537152293666,
+    "user_sha256": "1cb60986a51e3d695d9529291518e3bc7d95491748db65ea9f69a3800617b6f4",
+    "user_chars": 359812,
+    "user_words": 62698,
+    "max_tokens": 120
+  },
+  {
+    "profile": "05_100k_in_100_out",
+    "variant": "05_100k_in_100_out_fresh_09",
+    "seed": 17336285518253228955,
+    "user_sha256": "40ed0e4dad31e6631a7cfa653f9f701a499d33c9ed962ec525de6e79f79a873b",
+    "user_chars": 359812,
+    "user_words": 62698,
+    "max_tokens": 120
+  },
+  {
+    "profile": "05_100k_in_100_out",
+    "variant": "05_100k_in_100_out_fresh_10",
+    "seed": 12707006273191837176,
+    "user_sha256": "26a97b1d035361c14e36e9e0843567b7f981ac3d9a2afa3dab32aedc4b239b45",
+    "user_chars": 359812,
+    "user_words": 62698,
+    "max_tokens": 120
+  },
+  {
+    "profile": "06_100k_in_1k_out",
+    "variant": "06_100k_in_1k_out_fresh_01",
+    "seed": 11976276970826329984,
+    "user_sha256": "94f8547737324e68d7af1d27d17b7ef2cac000178ef7643cba84330fd088d0be",
+    "user_chars": 359940,
+    "user_words": 62716,
+    "max_tokens": 1200
+  },
+  {
+    "profile": "06_100k_in_1k_out",
+    "variant": "06_100k_in_1k_out_fresh_02",
+    "seed": 10178569094888935653,
+    "user_sha256": "13e973c3d10bc564ee234fb6aa31536f57cd88a515f71384972f9de9d5cc2dc5",
+    "user_chars": 359940,
+    "user_words": 62716,
+    "max_tokens": 1200
+  },
+  {
+    "profile": "06_100k_in_1k_out",
+    "variant": "06_100k_in_1k_out_fresh_03",
+    "seed": 14886641716223878790,
+    "user_sha256": "55c6e276f7f9597696b9b21a5208a2382a0599cf9a19050784089c84673aaa64",
+    "user_chars": 359940,
+    "user_words": 62716,
+    "max_tokens": 1200
+  },
+  {
+    "profile": "06_100k_in_1k_out",
+    "variant": "06_100k_in_1k_out_fresh_04",
+    "seed": 5308843133347652965,
+    "user_sha256": "e5e604f1368ec791f200ada99ede147be3318a53ba97c7af5c3b3edfe9e4660c",
+    "user_chars": 359940,
+    "user_words": 62716,
+    "max_tokens": 1200
+  },
+  {
+    "profile": "06_100k_in_1k_out",
+    "variant": "06_100k_in_1k_out_fresh_05",
+    "seed": 16632739923327922638,
+    "user_sha256": "8b28d3d3f22842116e80772d28062093af3890c6a9b360c5098acee170a214d9",
+    "user_chars": 359940,
+    "user_words": 62716,
+    "max_tokens": 1200
+  },
+  {
+    "profile": "06_100k_in_1k_out",
+    "variant": "06_100k_in_1k_out_fresh_06",
+    "seed": 14923189626798482992,
+    "user_sha256": "a3b213788b7c09662b3bffb75e8fd723ce4388282bc118e65e5e7ed436de146e",
+    "user_chars": 359940,
+    "user_words": 62716,
+    "max_tokens": 1200
+  },
+  {
+    "profile": "06_100k_in_1k_out",
+    "variant": "06_100k_in_1k_out_fresh_07",
+    "seed": 13828474289972595658,
+    "user_sha256": "086f6679fa14f589b13b89407f4cbcd2de51e12d892093ddbf7fa753048da6b9",
+    "user_chars": 359940,
+    "user_words": 62716,
+    "max_tokens": 1200
+  },
+  {
+    "profile": "06_100k_in_1k_out",
+    "variant": "06_100k_in_1k_out_fresh_08",
+    "seed": 6700744742300397170,
+    "user_sha256": "d95c571f6c60df8f25dfaf538d7837ba4cff55b2ceb44487016e6f8e123193bc",
+    "user_chars": 359940,
+    "user_words": 62716,
+    "max_tokens": 1200
+  },
+  {
+    "profile": "06_100k_in_1k_out",
+    "variant": "06_100k_in_1k_out_fresh_09",
+    "seed": 16074240014069413339,
+    "user_sha256": "4d36841359b26f6854ca60f501497dbf09f4fba3321e236ef8e1b3afd8ecf4ff",
+    "user_chars": 359940,
+    "user_words": 62716,
+    "max_tokens": 1200
+  },
+  {
+    "profile": "06_100k_in_1k_out",
+    "variant": "06_100k_in_1k_out_fresh_10",
+    "seed": 13555870008669058114,
+    "user_sha256": "75fd72425bfd9e2b3d24596c54475e271caa70c8a056cfcadf03f6a3b05ed744",
+    "user_chars": 359940,
+    "user_words": 62716,
+    "max_tokens": 1200
+  }
+]

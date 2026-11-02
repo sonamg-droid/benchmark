@@ -1,0 +1,302 @@
+{
+  "datasetVersion": "multi-turn-task-completion-v1",
+  "models": [
+    {
+      "id": "zai-org/GLM-5.3-Flash",
+      "label": "GLM 5.3 Flash",
+      "baseUrl": "https://api.telnyx.com/v2/ai",
+      "apiKeyEnv": "TELNYX_API_KEY",
+      "reasoningEffort": "low"
+    },
+    {
+      "id": "zai-org/GLM-5.3",
+      "label": "GLM 5.3",
+      "baseUrl": "https://api.telnyx.com/v2/ai",
+      "apiKeyEnv": "TELNYX_API_KEY",
+      "reasoningEffort": "low"
+    },
+    {
+      "id": "moonshotai/Kimi-K3",
+      "label": "Kimi K3",
+      "baseUrl": "https://api.telnyx.com/v2/ai",
+      "apiKeyEnv": "TELNYX_API_KEY",
+      "reasoningEffort": "low"
+    }
+  ],
+  "judges": [
+    {
+      "id": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "label": "DeepSeek V4.1 Flash",
+      "baseUrl": "https://api.telnyx.com/v2/ai",
+      "apiKeyEnv": "TELNYX_API_KEY",
+      "judgeMaxTokens": 4096
+    },
+    {
+      "id": "MiniMaxAI/MiniMax-M3-MXFP8",
+      "label": "MiniMax M3",
+      "baseUrl": "https://api.telnyx.com/v2/ai",
+      "apiKeyEnv": "TELNYX_API_KEY",
+      "reasoningEffort": "low",
+      "judgeMaxTokens": 4096
+    }
+  ],
+  "repeats": 1,
+  "timeoutMs": 900000,
+  "batchSize": 1,
+  "autoStart": true,
+  "scenarios": [
+    {
+      "id": "dev-01-cursor-pagination",
+      "category": "developer",
+      "title": "Revise a cursor-pagination API contract",
+      "system": "You are a senior API engineer. Use only the requirements supplied in this conversation. Keep proposed contracts internally consistent as requirements change.",
+      "judgeContext": "The final contract must use an opaque after cursor, default limit 50, maximum 200, descending created_at order with id as tie-breaker, and next_after set to null on the final page. It must not retain the superseded page-number design.",
+      "turns": [
+        {"id": "t1", "user": "Design a compact JSON response for GET /events using page and per_page. Include records and pagination metadata.", "maxTokens": 4096},
+        {"id": "t2", "user": "Correction: we cannot use page numbers. Replace that with an opaque after cursor. The default limit is 50 and the maximum is 200.", "maxTokens": 4096},
+        {"id": "t3", "user": "Add deterministic ordering: created_at descending, then id descending as the tie-breaker. Explain how next_after behaves on the last page.", "maxTokens": 4096},
+        {"id": "t4", "user": "Give me the final request parameters and one final-page JSON example only. Use next_after: null in that example.", "maxTokens": 4096}
+      ],
+      "objectiveChecks": [
+        {"type": "contains_all", "label": "Final cursor contract", "values": ["after", "50", "200", "created_at", "id", "next_after", "null"]},
+        {"type": "contains_none", "label": "Superseded pagination removed", "values": ["per_page", "page number", "\"page\""]}
+      ]
+    },
+    {
+      "id": "dev-02-zero-downtime-migration",
+      "category": "developer",
+      "title": "Plan a zero-downtime database migration",
+      "system": "You are reviewing a production PostgreSQL migration. Track every operational constraint and do not claim unsupported guarantees.",
+      "judgeContext": "The final plan must add nullable customer_tier, backfill in batches, deploy dual-read compatibility before enforcing the constraint, and include rollback. The later correction forbids a single blocking table rewrite.",
+      "turns": [
+        {"id": "t1", "user": "We need to add customer_tier TEXT NOT NULL DEFAULT 'standard' to a 400 million row accounts table. Draft a migration plan.", "maxTokens": 4096},
+        {"id": "t2", "user": "New constraint: a single blocking table rewrite is unacceptable. Revise the plan for zero downtime.", "maxTokens": 4096},
+        {"id": "t3", "user": "Applications deploy independently. Add a compatibility phase where old and new application versions can run together.", "maxTokens": 4096},
+        {"id": "t4", "user": "Return the final ordered rollout and rollback plan as numbered steps. Keep it concise.", "maxTokens": 4096}
+      ],
+      "objectiveChecks": [
+        {"type": "contains_all", "label": "Required migration phases", "values": ["nullable", "backfill", "batch", "rollback", "compatib"]},
+        {"type": "contains_none", "label": "Blocking rewrite rejected", "values": ["single blocking rewrite", "one transaction for all rows"]}
+      ]
+    },
+    {
+      "id": "dev-03-webhook-verification",
+      "category": "developer",
+      "title": "Harden a webhook verification design",
+      "system": "You are a security-minded backend engineer. Preserve the exact security requirements accumulated in the conversation.",
+      "judgeContext": "The final design must verify HMAC-SHA256 over timestamp + '.' + raw body, support current and previous secrets, reject timestamps older than five minutes, prevent replay by event ID for ten minutes, use constant-time comparison, and return 401 for signature failures versus 409 for replay.",
+      "turns": [
+        {"id": "t1", "user": "Sketch middleware that verifies an HMAC-SHA256 webhook signature using the raw request body.", "maxTokens": 4096},
+        {"id": "t2", "user": "The signed payload is timestamp + '.' + raw_body. Reject timestamps older than five minutes and use constant-time comparison.", "maxTokens": 4096},
+        {"id": "t3", "user": "We rotate secrets. Accept either the current or previous secret. Also reject a repeated event ID for ten minutes.", "maxTokens": 4096},
+        {"id": "t4", "user": "Produce final TypeScript-like pseudocode. Return 401 for a bad signature or stale timestamp and 409 for a replay.", "maxTokens": 4096}
+      ],
+      "objectiveChecks": [
+        {"type": "contains_all", "label": "Security controls retained", "values": ["HMAC", "SHA-256", "timestamp", "raw", "constant", "current", "previous", "five", "event", "ten", "401", "409"]}
+      ]
+    },
+    {
+      "id": "dev-04-json-normalization",
+      "category": "developer",
+      "title": "Correct a JSON normalization function",
+      "system": "You are debugging a data transformation. Follow the examples exactly and preserve distinctions the user marks as meaningful.",
+      "judgeContext": "The final JavaScript function must trim strings, convert empty strings to null, preserve numeric zero and boolean false, omit only undefined values, recursively normalize arrays and objects, and not remove null array entries.",
+      "turns": [
+        {"id": "t1", "user": "Write a JavaScript normalize(value) function that trims strings and recursively handles arrays and plain objects.", "maxTokens": 4096},
+        {"id": "t2", "user": "Correction: empty strings become null. Numeric 0 and boolean false must be preserved.", "maxTokens": 4096},
+        {"id": "t3", "user": "Omit object properties whose value is undefined, but do not remove null entries from arrays.", "maxTokens": 4096},
+        {"id": "t4", "user": "Return the final function plus three small assertions covering the corrections.", "maxTokens": 4096}
+      ],
+      "objectiveChecks": [
+        {"type": "contains_all", "label": "Normalization behavior", "values": ["trim", "null", "undefined", "false", "0", "Array"]}
+      ]
+    },
+    {
+      "id": "dev-05-distributed-rate-limit",
+      "category": "developer",
+      "title": "Evolve a rate limiter into a distributed design",
+      "system": "You are an infrastructure architect. Revise earlier designs when constraints change and make failure behavior explicit.",
+      "judgeContext": "The final design must enforce 120 requests per minute per tenant across instances, use a shared atomic store, key by tenant and window, allow a burst of 20 without raising the sustained allowance, return Retry-After, and choose fail-closed for write endpoints and fail-open for read endpoints if the store is unavailable.",
+      "turns": [
+        {"id": "t1", "user": "Design an in-memory rate limiter for 120 requests per minute per tenant.", "maxTokens": 4096},
+        {"id": "t2", "user": "That will run on eight instances, so local memory is no longer sufficient. Revise it to enforce one shared limit.", "maxTokens": 4096},
+        {"id": "t3", "user": "Allow a burst of 20, return Retry-After, and keep the sustained allowance at 120 per minute.", "maxTokens": 4096},
+        {"id": "t4", "user": "If the shared store is unavailable, fail closed for writes but fail open for reads. Give the final algorithm and key format.", "maxTokens": 4096}
+      ],
+      "objectiveChecks": [
+        {"type": "contains_all", "label": "Distributed limiter constraints", "values": ["120", "tenant", "atomic", "20", "Retry-After", "fail closed", "fail open"]}
+      ]
+    },
+    {
+      "id": "biz-01-support-triage",
+      "category": "business",
+      "title": "Reprioritize a support queue",
+      "system": "You manage support operations. Base decisions only on the supplied tickets and prioritization rules.",
+      "judgeContext": "Final JSON must rank T3 first because it is a production outage. After the correction, T5 must come before ordinary non-outage tickets because Acme is a VIP, but VIP status must not outrank the outage. Every ticket T1-T5 must appear once with id, priority, and reason.",
+      "turns": [
+        {"id": "t1", "user": "Triage these tickets: T1 password reset for one user; T2 invoice PDF missing; T3 production API outage for all users; T4 feature request; T5 delayed exports for Acme. Propose priorities P0-P3.", "maxTokens": 4096},
+        {"id": "t2", "user": "New information: Acme is a VIP account. Reprioritize, but an active broad outage still outranks VIP status.", "maxTokens": 4096},
+        {"id": "t3", "user": "Use one short reason per ticket and do not invent SLA commitments.", "maxTokens": 4096},
+        {"id": "t4", "user": "Return final JSON with a tickets array ordered from highest to lowest priority. Each object must have id, priority, and reason.", "maxTokens": 4096}
+      ],
+      "objectiveChecks": [
+        {"type": "valid_json", "label": "Valid JSON output"},
+        {"type": "json_has_keys", "label": "Top-level tickets key", "keys": ["tickets"]},
+        {"type": "contains_all", "label": "All tickets retained", "values": ["T1", "T2", "T3", "T4", "T5"]}
+      ]
+    },
+    {
+      "id": "biz-02-launch-brief",
+      "category": "business",
+      "title": "Revise a product launch brief",
+      "system": "You are a product marketing manager. Use the supplied facts, preserve later constraints, and clearly label unknowns.",
+      "judgeContext": "The final brief must target existing North American customers, launch on November 12, use a 25000 dollar budget after the correction, allocate at least 40 percent to customer webinars, avoid paid search, and identify owners Maya, Luis, and Chen without inventing metrics.",
+      "turns": [
+        {"id": "t1", "user": "Draft a launch brief for Atlas Analytics. Audience: existing North American customers. Launch date: November 12. Budget: $40,000. Owners: Maya for content, Luis for lifecycle email, Chen for webinars.", "maxTokens": 4096},
+        {"id": "t2", "user": "Budget was cut to $25,000. At least 40% must go to customer webinars.", "maxTokens": 4096},
+        {"id": "t3", "user": "Remove paid search from the plan. Do not invent conversion targets; mark success targets as TBD.", "maxTokens": 4096},
+        {"id": "t4", "user": "Give me the final one-page brief with budget allocations that total exactly $25,000.", "maxTokens": 4096}
+      ],
+      "objectiveChecks": [
+        {"type": "contains_all", "label": "Final launch constraints", "values": ["November 12", "$25,000", "Maya", "Luis", "Chen", "webinar", "TBD"]},
+        {"type": "contains_none", "label": "Removed channel stays removed", "values": ["paid search"]}
+      ]
+    },
+    {
+      "id": "biz-03-policy-faq",
+      "category": "business",
+      "title": "Build an FAQ from a supplied policy",
+      "system": "You answer only from the policy text supplied by the user. If the policy does not answer something, say it is not specified.",
+      "judgeContext": "Policy facts: returns within 30 calendar days; item must be unused; original packaging required; clearance items are final sale; customer pays return shipping; damaged-on-arrival claims must be reported within 7 days and receive a prepaid label. The final FAQ must reflect the correction that opened software is final sale.",
+      "turns": [
+        {"id": "t1", "user": "Policy: Returns are accepted within 30 calendar days for unused items in original packaging. Clearance items are final sale. Customers pay return shipping. Damaged-on-arrival claims reported within 7 days receive a prepaid label. Draft five FAQ entries.", "maxTokens": 4096},
+        {"id": "t2", "user": "Add a question about exchanges. The policy does not specify exchanges, so do not infer an answer.", "maxTokens": 4096},
+        {"id": "t3", "user": "Correction to the policy: opened software is also final sale.", "maxTokens": 4096},
+        {"id": "t4", "user": "Return the final FAQ with exactly six question-and-answer pairs.", "maxTokens": 4096}
+      ],
+      "objectiveChecks": [
+        {"type": "contains_all", "label": "Policy facts retained", "values": ["30", "unused", "original packaging", "clearance", "return shipping", "7 days", "prepaid", "opened software", "not specified"]}
+      ]
+    },
+    {
+      "id": "biz-04-account-summary",
+      "category": "business",
+      "title": "Update an account plan from meeting notes",
+      "system": "You are preparing an account plan. Distinguish confirmed facts, risks, and next actions; never fabricate customer commitments.",
+      "judgeContext": "The final summary must identify Northstar Health, renewal December 31, 420 seats, concerns about audit logs and EU residency, interest in SSO, Priya as customer owner, Devon as internal owner, and a security review on October 18. The correction states budget approval is not confirmed.",
+      "turns": [
+        {"id": "t1", "user": "Notes: Northstar Health renews December 31 with 420 seats. They raised concerns about audit logs and EU data residency and asked about SSO. Customer owner is Priya; our owner is Devon. Summarize the account.", "maxTokens": 4096},
+        {"id": "t2", "user": "Add risk level and next actions. A security review is scheduled for October 18.", "maxTokens": 4096},
+        {"id": "t3", "user": "Correction: budget approval is not confirmed. Do not describe renewal as committed.", "maxTokens": 4096},
+        {"id": "t4", "user": "Give the final account brief under Facts, Risks, and Next actions.", "maxTokens": 4096}
+      ],
+      "objectiveChecks": [
+        {"type": "contains_all", "label": "Account facts retained", "values": ["Northstar Health", "December 31", "420", "audit", "EU", "SSO", "Priya", "Devon", "October 18", "not confirmed"]},
+        {"type": "contains_none", "label": "No false commitment", "values": ["renewal is committed", "budget is approved"]}
+      ]
+    },
+    {
+      "id": "biz-05-incident-update",
+      "category": "business",
+      "title": "Correct an incident status update",
+      "system": "You write precise incident communications. Separate observed impact from hypotheses and preserve the latest status.",
+      "judgeContext": "Timeline: elevated errors began 14:05 UTC; mitigation began 14:22; error rate returned to baseline 14:37; monitoring continues. The database saturation explanation was corrected to an unconfirmed hypothesis and must not be stated as root cause. The final update must include impact, timeline, current status, and next update at 15:30 UTC.",
+      "turns": [
+        {"id": "t1", "user": "Draft an internal incident update. Elevated API errors began 14:05 UTC. We suspect database saturation. Mitigation began 14:22.", "maxTokens": 4096},
+        {"id": "t2", "user": "At 14:37 the error rate returned to baseline. Monitoring is continuing.", "maxTokens": 4096},
+        {"id": "t3", "user": "Correction: database saturation is only a hypothesis, not a confirmed root cause.", "maxTokens": 4096},
+        {"id": "t4", "user": "Write the final customer-safe update with impact, timeline, current status, and next update at 15:30 UTC.", "maxTokens": 4096}
+      ],
+      "objectiveChecks": [
+        {"type": "contains_all", "label": "Incident timeline retained", "values": ["14:05", "14:22", "14:37", "baseline", "monitor", "15:30", "hypothesis"]},
+        {"type": "contains_none", "label": "Hypothesis not presented as fact", "values": ["root cause was database saturation", "caused by database saturation"]}
+      ]
+    },
+    {
+      "id": "plan-01-workshop-schedule",
+      "category": "planning_editing_structured",
+      "title": "Revise a constrained workshop schedule",
+      "system": "You are scheduling a workshop. Respect durations, dependencies, breaks, and every later correction.",
+      "judgeContext": "Final schedule starts 09:00, ends no later than 13:00, includes welcome 15 minutes, discovery 45, architecture 60, break 15, prioritization 45, wrap-up 15. Architecture must follow discovery. After correction, break must immediately follow architecture. Total programmed time is 195 minutes, leaving 45 minutes available within the window.",
+      "turns": [
+        {"id": "t1", "user": "Schedule a workshop from 09:00 to 13:00: welcome 15m, discovery 45m, architecture 60m, break 15m, prioritization 45m, wrap-up 15m. Architecture must follow discovery.", "maxTokens": 4096},
+        {"id": "t2", "user": "Add 30 minutes of buffer without changing any session duration.", "maxTokens": 4096},
+        {"id": "t3", "user": "Correction: the break must be immediately after architecture. Put the remaining buffer where it fits.", "maxTokens": 4096},
+        {"id": "t4", "user": "Return the final schedule as a table with start, end, and item. Confirm the finish time.", "maxTokens": 4096}
+      ],
+      "objectiveChecks": [
+        {"type": "contains_all", "label": "All agenda items retained", "values": ["09:00", "welcome", "discovery", "architecture", "break", "prioritization", "wrap-up", "buffer"]}
+      ]
+    },
+    {
+      "id": "plan-02-executive-edit",
+      "category": "planning_editing_structured",
+      "title": "Iteratively edit an executive update",
+      "system": "You are an exacting editor. Preserve factual content while applying the latest style and length constraints.",
+      "judgeContext": "Source facts: migration completed for 82 percent of accounts; support tickets decreased 14 percent; two enterprise customers remain blocked by custom SSO; next milestone is October 30. Final output must be 70-90 words, direct but not celebratory, mention the two blocked customers, and end with the October 30 milestone.",
+      "turns": [
+        {"id": "t1", "user": "Rewrite this as an executive update: We migrated 82% of accounts. Support tickets are down 14%. Two enterprise customers remain blocked by custom SSO. The next milestone is October 30.", "maxTokens": 4096},
+        {"id": "t2", "user": "Make the tone more confident and remove passive voice.", "maxTokens": 4096},
+        {"id": "t3", "user": "Correction: do not sound celebratory while two customers are blocked. Keep it direct.", "maxTokens": 4096},
+        {"id": "t4", "user": "Return only the final update in 70 to 90 words, ending with the October 30 milestone.", "maxTokens": 4096}
+      ],
+      "objectiveChecks": [
+        {"type": "contains_all", "label": "Source facts retained", "values": ["82%", "14%", "two", "SSO", "October 30"]},
+        {"type": "regex", "label": "Ends with milestone date", "pattern": "October 30\\.?$", "flags": "i"}
+      ]
+    },
+    {
+      "id": "plan-03-hiring-scorecard",
+      "category": "planning_editing_structured",
+      "title": "Update a candidate scorecard",
+      "system": "You evaluate candidates only from supplied evidence. Mark missing evidence instead of guessing.",
+      "judgeContext": "Role weights after correction: systems design 35, coding 25, communication 20, operations 20. Evidence: Aria strong systems design, adequate coding, strong communication, no operations evidence; Bo adequate systems design, strong coding, adequate communication, strong operations. Final JSON must include both candidates, weighted totals or clearly reproducible calculation, missing evidence, and a recommendation that acknowledges uncertainty.",
+      "turns": [
+        {"id": "t1", "user": "Create a scorecard for Aria and Bo. Weights: systems design 40%, coding 30%, communication 20%, operations 10%. Aria: strong systems, adequate coding, strong communication, no operations evidence. Bo: adequate systems, strong coding, adequate communication, strong operations.", "maxTokens": 4096},
+        {"id": "t2", "user": "Use strong=3, adequate=2, weak=1. Missing evidence gets no numeric score and must be flagged.", "maxTokens": 4096},
+        {"id": "t3", "user": "Correction: change weights to systems 35%, coding 25%, communication 20%, operations 20%.", "maxTokens": 4096},
+        {"id": "t4", "user": "Return final JSON with candidates, weighted_total, missing_evidence, and recommendation. Do not invent evidence.", "maxTokens": 4096}
+      ],
+      "objectiveChecks": [
+        {"type": "valid_json", "label": "Valid JSON output"},
+        {"type": "json_has_keys", "label": "Scorecard keys", "keys": ["candidates", "recommendation"]},
+        {"type": "contains_all", "label": "Candidates and missing evidence", "values": ["Aria", "Bo", "missing", "operations"]}
+      ]
+    },
+    {
+      "id": "plan-04-dependent-project-plan",
+      "category": "planning_editing_structured",
+      "title": "Reschedule a dependency-aware project plan",
+      "system": "You are a project planner. Keep dates and dependencies consistent when milestones move.",
+      "judgeContext": "Tasks: discovery 3 working days; design 4 after discovery; implementation 8 after design; security review 2 after implementation; launch 1 after approval. Project originally starts Monday October 5. Later correction says discovery starts Wednesday October 7 instead. Final plan must shift dependent tasks, preserve durations, exclude weekends, and state assumptions about dates/year if needed.",
+      "turns": [
+        {"id": "t1", "user": "Plan sequential work starting Monday October 5: discovery 3 working days; design 4 after discovery; implementation 8 after design; security review 2 after implementation; launch 1 after approval. Exclude weekends.", "maxTokens": 4096},
+        {"id": "t2", "user": "Add owners: discovery and design to Mei, implementation to Omar, security review to Inez, launch to Mei.", "maxTokens": 4096},
+        {"id": "t3", "user": "Correction: discovery cannot start until Wednesday October 7. Shift every dependent task.", "maxTokens": 4096},
+        {"id": "t4", "user": "Return the final plan as a table with task, owner, start, end, duration, and dependency. State any calendar assumption.", "maxTokens": 4096}
+      ],
+      "objectiveChecks": [
+        {"type": "contains_all", "label": "Plan fields and owners", "values": ["October 7", "Mei", "Omar", "Inez", "discovery", "design", "implementation", "security", "launch", "dependency"]}
+      ]
+    },
+    {
+      "id": "plan-05-invoice-extraction",
+      "category": "planning_editing_structured",
+      "title": "Correct structured invoice extraction",
+      "system": "You extract only supplied invoice facts. Apply corrections exactly and return no unsupported fields.",
+      "judgeContext": "Final facts: invoice INV-2048; vendor Alder Labs; issue date 2026-09-03; currency USD; line items: API usage quantity 120 unit price 2.50, Support quantity 1 unit price 400.00; subtotal 700.00; tax 56.00; total 756.00; due date corrected to 2026-10-10; purchase order PO-771 is present after correction. Final output must be valid JSON.",
+      "turns": [
+        {"id": "t1", "user": "Extract this invoice: INV-2048, Alder Labs, issued 2026-09-03, USD. API usage: 120 units at $2.50. Support: 1 at $400. Subtotal $700, tax $56, total $756. Due 2026-10-03.", "maxTokens": 4096},
+        {"id": "t2", "user": "Use ISO dates and numeric amounts. Add a line_items array with description, quantity, and unit_price.", "maxTokens": 4096},
+        {"id": "t3", "user": "Correction: the due date is 2026-10-10, not October 3. Purchase order PO-771 is present.", "maxTokens": 4096},
+        {"id": "t4", "user": "Return only the final JSON with invoice_id, vendor, issue_date, due_date, purchase_order, currency, line_items, subtotal, tax, and total.", "maxTokens": 4096}
+      ],
+      "objectiveChecks": [
+        {"type": "valid_json", "label": "Valid JSON output"},
+        {"type": "json_has_keys", "label": "Invoice fields", "keys": ["invoice_id", "vendor", "issue_date", "due_date", "purchase_order", "currency", "line_items", "subtotal", "tax", "total"]},
+        {"type": "contains_all", "label": "Corrected invoice facts", "values": ["INV-2048", "Alder Labs", "2026-10-10", "PO-771", "756"]},
+        {"type": "contains_none", "label": "Old due date removed", "values": ["2026-10-03"]}
+      ]
+    }
+  ]
+}

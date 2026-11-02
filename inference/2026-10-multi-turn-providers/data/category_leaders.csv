@@ -1,0 +1,25 @@
+model_family,category,winner,value
+GLM 5.3 Flash,Blind quality,Together AI,5.00
+GLM 5.3 Flash,Judge completion,"Telnyx, Together AI, Fireworks",100.0%
+GLM 5.3 Flash,Objective checks,"Baseten, Together AI, Fireworks",78.6%
+GLM 5.3 Flash,Reliability,"Baseten, Together AI, Fireworks",100.0%
+GLM 5.3 Flash,Median total response time,Telnyx,8.26s
+GLM 5.3 Flash,Observed p95 total response time,Telnyx,35.62s
+GLM 5.3 Flash,Median time to first answer,Together AI,0.42s
+GLM 5.3 Flash,Median per-turn E2E,Telnyx,1.85s
+GLM 5.3,Blind quality,Telnyx,4.95
+GLM 5.3,Judge completion,"Telnyx, Baseten, Fireworks",100.0%
+GLM 5.3,Objective checks,Together AI,81.5%
+GLM 5.3,Reliability,"Telnyx, Baseten",100.0%
+GLM 5.3,Median total response time,Telnyx,13.48s
+GLM 5.3,Observed p95 total response time,Telnyx,41.33s
+GLM 5.3,Median time to first answer,Together AI,0.46s
+GLM 5.3,Median per-turn E2E,Telnyx,2.79s
+Kimi K3,Blind quality,Baseten,4.96
+Kimi K3,Judge completion,"Telnyx, Baseten, Fireworks",100.0%
+Kimi K3,Objective checks,Baseten,79.5%
+Kimi K3,Reliability,"Telnyx, Fireworks",100.0%
+Kimi K3,Median total response time,Telnyx,10.49s
+Kimi K3,Observed p95 total response time,Telnyx,46.40s
+Kimi K3,Median time to first answer,Telnyx,0.54s
+Kimi K3,Median per-turn E2E,Telnyx,2.57s

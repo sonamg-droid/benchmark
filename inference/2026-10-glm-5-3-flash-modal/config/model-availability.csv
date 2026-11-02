@@ -1,0 +1,11 @@
+model_id,telnyx_managed,modal_shared_confirmed,modal_dedicated_documented,benchmark_status,evidence
+zai-org/GLM-5.3-Flash,yes,yes,yes,tested,Exact model ID benchmarked on Telnyx managed inference and Modal Shared
+zai-org/GLM-5.3,yes,available model family not exact endpoint-confirmed,available through Modal endpoint catalog,not tested,No exact ready Shared Endpoint was provisioned for this benchmark
+deepseek-ai/DeepSeek-V4.1-Flash,yes,not endpoint-confirmed,Modal says Dedicated supports library or custom weights,not tested,No exact ready Shared Endpoint was provisioned
+moonshotai/Kimi-K3,yes,available model family not exact endpoint-confirmed,available through Modal endpoint catalog,not tested,No exact ready Shared Endpoint was provisioned
+moonshotai/Kimi-K2.6,yes,not endpoint-confirmed,Modal says Dedicated supports library or custom weights,not tested,No exact ready Shared Endpoint was provisioned
+zai-org/GLM-5.2,yes,not endpoint-confirmed,Modal says Dedicated supports library or custom weights,not tested,No exact ready Shared Endpoint was provisioned
+MiniMaxAI/MiniMax-M3-MXFP8,yes,not endpoint-confirmed,Modal says Dedicated supports library or custom weights,not tested,No exact ready Shared Endpoint was provisioned
+deepseek-ai/DeepSeek-V4-Flash-0731,yes,not endpoint-confirmed,Modal says Dedicated supports library or custom weights,not tested,No exact ready Shared Endpoint was provisioned
+Qwen/Qwen3.8-27B,yes,available model family not exact endpoint-confirmed,available through Modal endpoint catalog,not tested,No exact ready Shared Endpoint was provisioned
+google/gemma-4-26B-A4B-it,yes,not endpoint-confirmed,Modal says Dedicated supports library or custom weights,not tested,No exact ready Shared Endpoint was provisioned
