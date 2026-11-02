@@ -1,0 +1,72 @@
+{
+  "model_family": "GLM 5.3 Flash",
+  "endpoints": [
+    {
+      "id": "telnyx_default",
+      "label": "Telnyx Inference",
+      "actor_provider": "telnyx",
+      "base_url": "https://api.telnyx.com/v2/ai",
+      "model": "zai-org/GLM-5.3-Flash",
+      "api_key_env": "TELNYX_API_KEY",
+      "reasoning_effort": "low",
+      "include_stream_options": true,
+      "documented_concurrency_limit": null,
+      "endpoint_type": "managed_per_token",
+      "routing_region": "provider-managed",
+      "compute_region": "not exposed by API"
+    },
+    {
+      "id": "modal_shared",
+      "label": "Modal Shared Endpoint",
+      "actor_provider": "modal_shared",
+      "base_url": "<Modal Shared endpoint URL>",
+      "model": "zai-org/GLM-5.3-Flash",
+      "api_key_env": "MODAL_PROXY_TOKEN",
+      "reasoning_effort": "low",
+      "include_stream_options": true,
+      "documented_concurrency_limit": 16,
+      "endpoint_type": "managed_per_token",
+      "routing_region": "us-west",
+      "compute_region": "provider-managed"
+    }
+  ],
+  "profiles": [
+    {
+      "id": "short_1k_256",
+      "input_tokens": 1000,
+      "max_output_tokens": 256
+    },
+    {
+      "id": "medium_10k_256",
+      "input_tokens": 10000,
+      "max_output_tokens": 256
+    },
+    {
+      "id": "long_100k_256",
+      "input_tokens": 100000,
+      "max_output_tokens": 256
+    },
+    {
+      "id": "generation_10k_1024",
+      "input_tokens": 10000,
+      "max_output_tokens": 1024
+    }
+  ],
+  "load": {
+    "concurrency": [
+      1,
+      10,
+      50,
+      100
+    ],
+    "attempts": {
+      "1": 30,
+      "10": 30,
+      "50": 150,
+      "100": 300
+    },
+    "warmups_per_endpoint_profile": 3,
+    "timeout_ms": 900000,
+    "random_seed": 5303
+  }
+}

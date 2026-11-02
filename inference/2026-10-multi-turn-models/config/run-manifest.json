@@ -1,0 +1,18 @@
+{
+  "run_id": "multi-turn-v1-full-20261005-001",
+  "dataset_path": "config/scenarios-and-models.json",
+  "dataset_version": "multi-turn-task-completion-v1",
+  "candidate_models": [
+    "zai-org/GLM-5.3-Flash",
+    "zai-org/GLM-5.3",
+    "moonshotai/Kimi-K3"
+  ],
+  "judge_models": [
+    "deepseek-ai/DeepSeek-V4.1-Flash",
+    "MiniMaxAI/MiniMax-M3-MXFP8"
+  ],
+  "scenario_count": 15,
+  "repeats": 1,
+  "launched_at": "2026-10-05T22:11:57.922469+00:00",
+  "mode": "full"
+}

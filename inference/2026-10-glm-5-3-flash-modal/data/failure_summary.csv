@@ -1,0 +1,2 @@
+endpoint,profile,concurrency,status,error_category,count
+Telnyx Inference,short_1k_256,1,200,no_visible_answer,1

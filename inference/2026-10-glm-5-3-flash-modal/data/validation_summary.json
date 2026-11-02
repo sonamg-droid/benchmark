@@ -1,0 +1,23 @@
+{
+  "raw_rows": 1000,
+  "warmup_rows": 24,
+  "cache_seed_rows": 16,
+  "measured_rows": 960,
+  "successful_measured_rows": 959,
+  "failed_or_no_answer_measured_rows": 1,
+  "providers": [
+    "modal_shared",
+    "telnyx"
+  ],
+  "modal_dedicated_excluded": true,
+  "cached_token_evidence_rows": 0,
+  "p95_sample_sizes": [
+    29,
+    30
+  ],
+  "estimated_list_cost_usd": {
+    "Modal Shared Endpoint": 7.335018900000001,
+    "Telnyx Inference": 2.20031883
+  },
+  "cost_basis": "measured token counts multiplied by snapshotted published list prices; no cached-input discount without reported cache-token evidence"
+}

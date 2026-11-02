@@ -1,0 +1,4 @@
+model,conversations,completed_conversations,request_completion_rate,objective_checks_passed,objective_checks_total,objective_check_rate,judge_completion_votes,judge_results,judge_completion_rate,p50_total_response_ms,p95_total_response_ms,mean_input_tokens,mean_output_tokens
+GLM 5.3,15,15,100.0%,23,28,82.1%,27,30,90.0%,16375.092111999867,53194.05901479991,3399.266666666667,2150.6
+GLM 5.3 Flash,15,15,100.0%,22,28,78.6%,27,30,90.0%,8350.957342999987,31266.884780400254,2919.2,1886
+Kimi K3,15,15,100.0%,23,28,82.1%,30,30,100.0%,9360.26567400014,55713.055342200045,3319.4,1864.4

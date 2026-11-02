@@ -1,0 +1,114 @@
+{
+  "run_id": "multi-turn-inter-provider-v1-rerun-20261007-002",
+  "dataset_path": "config/scenarios-and-models.json",
+  "dataset_version": "multi-turn-task-completion-inter-provider-v1",
+  "candidate_cells": [
+    {
+      "provider": "telnyx",
+      "provider_label": "Telnyx",
+      "model": "zai-org/GLM-5.3-Flash",
+      "model_label": "Telnyx - GLM 5.3 Flash",
+      "reasoning_effort": "low",
+      "stream_options": true
+    },
+    {
+      "provider": "baseten",
+      "provider_label": "Baseten",
+      "model": "zai-org/GLM-5.3-Flash",
+      "model_label": "Baseten - GLM 5.3 Flash",
+      "reasoning_effort": "low",
+      "stream_options": true
+    },
+    {
+      "provider": "together",
+      "provider_label": "Together AI",
+      "model": "zai-org/GLM-5.3-Flash",
+      "model_label": "Together AI - GLM 5.3 Flash",
+      "reasoning_effort": "low",
+      "stream_options": true
+    },
+    {
+      "provider": "fireworks",
+      "provider_label": "Fireworks",
+      "model": "accounts/fireworks/models/glm-5p3-flash",
+      "model_label": "Fireworks - GLM 5.3 Flash",
+      "reasoning_effort": "low",
+      "stream_options": true
+    },
+    {
+      "provider": "telnyx",
+      "provider_label": "Telnyx",
+      "model": "zai-org/GLM-5.3",
+      "model_label": "Telnyx - GLM 5.3",
+      "reasoning_effort": "low",
+      "stream_options": true
+    },
+    {
+      "provider": "baseten",
+      "provider_label": "Baseten",
+      "model": "zai-org/GLM-5.3",
+      "model_label": "Baseten - GLM 5.3",
+      "reasoning_effort": "low",
+      "stream_options": true
+    },
+    {
+      "provider": "together",
+      "provider_label": "Together AI",
+      "model": "zai-org/GLM-5.3",
+      "model_label": "Together AI - GLM 5.3",
+      "reasoning_effort": "low",
+      "stream_options": true
+    },
+    {
+      "provider": "fireworks",
+      "provider_label": "Fireworks",
+      "model": "accounts/fireworks/models/glm-5p3",
+      "model_label": "Fireworks - GLM 5.3",
+      "reasoning_effort": "low",
+      "stream_options": true
+    },
+    {
+      "provider": "telnyx",
+      "provider_label": "Telnyx",
+      "model": "moonshotai/Kimi-K3",
+      "model_label": "Telnyx - Kimi K3",
+      "reasoning_effort": "low",
+      "stream_options": true
+    },
+    {
+      "provider": "baseten",
+      "provider_label": "Baseten",
+      "model": "moonshotai/Kimi-K3",
+      "model_label": "Baseten - Kimi K3",
+      "reasoning_effort": "low",
+      "stream_options": true
+    },
+    {
+      "provider": "together",
+      "provider_label": "Together AI",
+      "model": "moonshotai/Kimi-K3",
+      "model_label": "Together AI - Kimi K3",
+      "reasoning_effort": "low",
+      "stream_options": true
+    },
+    {
+      "provider": "fireworks",
+      "provider_label": "Fireworks",
+      "model": "accounts/fireworks/models/kimi-k3",
+      "model_label": "Fireworks - Kimi K3",
+      "reasoning_effort": "low",
+      "stream_options": true
+    }
+  ],
+  "judge_models": [
+    "deepseek-ai/DeepSeek-V4.1-Flash"
+  ],
+  "scenario_count": 15,
+  "repeats": 3,
+  "judge_repeats": [
+    1
+  ],
+  "task_order_seed": 20261006,
+  "launched_at": "2026-10-07T21:44:08.895339+00:00",
+  "mode": "full"
+}

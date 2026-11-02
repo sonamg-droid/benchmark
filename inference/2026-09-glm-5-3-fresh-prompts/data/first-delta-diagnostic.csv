@@ -1,0 +1,17 @@
+provider,model,profile,iteration,ok,status,ttfd_ms,first_delta_kind,error_category
+telnyx,zai-org/GLM-5.3,05_100k_in_100_out,1,True,200,3676.302,reasoning,
+telnyx,zai-org/GLM-5.3,05_100k_in_100_out,2,True,200,1619.792,reasoning,
+baseten,zai-org/GLM-5.3,05_100k_in_100_out,1,True,200,7144.094,reasoning,
+baseten,zai-org/GLM-5.3,05_100k_in_100_out,2,True,200,1851.039,content,
+together,zai-org/GLM-5.3,05_100k_in_100_out,1,False,403,,,http_403
+together,zai-org/GLM-5.3,05_100k_in_100_out,2,False,403,,,http_403
+fireworks,accounts/fireworks/models/glm-5p3,05_100k_in_100_out,1,True,200,5068.313,reasoning,
+fireworks,accounts/fireworks/models/glm-5p3,05_100k_in_100_out,2,True,200,4779.511,reasoning,
+telnyx,zai-org/GLM-5.3,06_100k_in_1k_out,1,True,200,3433.017,reasoning,
+telnyx,zai-org/GLM-5.3,06_100k_in_1k_out,2,True,200,5346.358,reasoning,
+baseten,zai-org/GLM-5.3,06_100k_in_1k_out,1,True,200,9503.812,reasoning,
+baseten,zai-org/GLM-5.3,06_100k_in_1k_out,2,True,200,1555.323,reasoning,
+together,zai-org/GLM-5.3,06_100k_in_1k_out,1,False,403,,,http_403
+together,zai-org/GLM-5.3,06_100k_in_1k_out,2,False,403,,,http_403
+fireworks,accounts/fireworks/models/glm-5p3,06_100k_in_1k_out,1,True,200,9726.694,reasoning,
+fireworks,accounts/fireworks/models/glm-5p3,06_100k_in_1k_out,2,True,200,4656.014,reasoning,

@@ -1,0 +1,6 @@
+model_family,provider,failed_conversations,attempts,failure_rate,failure_types
+GLM 5.3 Flash,Telnyx,1,45,2.2222222222222223,HTTP 503 provider error: 1
+GLM 5.3,Together AI,1,45,2.2222222222222223,No visible answer content: 1
+GLM 5.3,Fireworks,2,45,4.444444444444445,No visible answer content: 1; Status unknown stream error: 1
+Kimi K3,Baseten,1,45,2.2222222222222223,HTTP 500 provider error: 1
+Kimi K3,Together AI,5,45,11.11111111111111,HTTP 500 provider error: 2; No visible answer content: 2; Status unknown stream error: 1
